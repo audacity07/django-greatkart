@@ -1,0 +1,29 @@
+<!-- greatkart (outer project folder)/ templates folder/ includes folder/ footer.html -->
+
+<!-- ========================= FOOTER ========================= -->
+<footer class="section-footer border-top">
+	<div class="container">
+		<section class="footer-bottom border-top row">
+			<div class="col-md-12 mx-auto">
+				<p class="text-muted text-center" style="margin-bottom:0px;"> Developed with <i class="fa fa-heart" aria-hidden="true" style="color:#ff0000;"></i> by <a href="https://www.linkedin.com/in/ajeetpawar/" target="_blank" class="">Ajeet P</a></p>
+				<p class="text-muted text-center"><span  class="px-2 text-center"><a href="mailto:developer.ajeet7@gmail.com">developer.ajeet7@gmail.com</a></span>
+				<span  class="px-2 text-center"><i class="fa fa-map-marker" aria-hidden="true"></i> Bengaluru, India</span></p>
+			</div>
+			<!-- <div class="col-md-8 text-md-center">
+
+			</div> -->
+		</section>
+	</div><!-- //container -->
+</footer>
+<!-- ========================= FOOTER END // ========================= -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$('.thumb a').click(function(e){
+			e.preventDefault();
+			$('.mainImage img').attr('src', $(this).attr("href"));
+		})
+	})
+</script>
+</body>
+</html>
