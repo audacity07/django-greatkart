@@ -28,7 +28,7 @@ SECRET_KEY = config("SECRET_KEY")
 # "cast=bool" to say we need a boolean value.
 DEBUG = config("DEBUG", default=True, cast=bool)
 
-ALLOWED_HOSTS = ["greatkart-course-env.eba-wedwwj9b.us-west-2.elasticbeanstalk.com"]
+ALLOWED_HOSTS = ["greatkart-env.eba-imxdfrpp.us-west-2.elasticbeanstalk.com"]
 
 
 # Application definition
