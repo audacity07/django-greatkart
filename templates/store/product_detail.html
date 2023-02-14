@@ -79,7 +79,7 @@
       {% if single_product.stock <= 0 %}
           <h5 class="text-danger">Out of Stock</h5>
       {% else %}
-          <button type="submit" class="btn  btn-primary"> <span class="text">Add to cart</span> <i class="fas fa-shopping-cart"></i>  </button>
+          <button type="submit" class="btn  btn-primary"> <span class="text">Add to cart</span> <i class="fa fa-shopping-cart"></i>  </button>
       {% endif %}
   </article> <!-- product-info-aside .// -->
 </form>
@@ -98,7 +98,7 @@
     <form action="{% url 'submit_review' single_product.id %}" method="POST">
         {% csrf_token %}
         <h5>Write Your Review</h5>
-        {{single_product.averageReview}}
+        {{single_product.averageReview | floatformat:1 }}
         <div>
             <!-- Rating Stars-->
             <label>How do you rate this product?</label>

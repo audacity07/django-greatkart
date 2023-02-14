@@ -147,27 +147,19 @@ def place_order(request, total=0, quantity=0):
         else:
             return redirect("checkout")
 
-# def order_complete(request):
-#     return render(request, "orders/order_complete.html")
-
 def order_complete(request):
     order_number = request.GET.get("order_number")
     transID = request.GET.get("payment_id")
 
     try:
-        print("-----1-----")
         order = Order.objects.get(order_number=order_number, is_ordered=True)
-        print("-----2-----")
         ordered_products = OrderProduct.objects.filter(order_id=order.id)
-        print("-----3-----")
 
         subtotal = 0
         for i in ordered_products:
             subtotal += i.product_price * i.quantity
-        print("-----4-----")
 
         payment = Payment.objects.get(payment_id=transID)
-        print("-----5-----")
 
         context = {
             "order": order,
@@ -177,8 +169,6 @@ def order_complete(request):
             "payment": payment,
             "subtotal": subtotal,
         }
-        print("-----6-----")
         return render(request, "orders/order_complete.html", context)
     except (Payment.DoesNotExist, Order.DoesNotExist):
-        print("-----7-----")
         return redirect("home")
