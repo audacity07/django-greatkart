@@ -43,7 +43,7 @@ def payments(request):
         orderproduct.ordered = True
         orderproduct.save()
 
-        # Variation is a ManyToMany field and we can save it directly.
+        # Variation is a ManyToMany field and we cant save it directly.
         # We need to save the orderproduct by declaring all the fields first
         # and then when that item is created then we can save the variation field
         # as shown below.
