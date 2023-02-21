@@ -55,13 +55,6 @@ def product_detail(request, category_slug, product_slug):
     # Get the reviews
     reviews = ReviewRating.objects.filter(product_id=single_product.id, status=True)
 
-    context = {
-        "single_product": single_product,
-        "in_cart": in_cart,
-        "orderproduct": orderproduct,
-        "reviews": reviews,
-    }
-
     # Get the product gallery
     product_gallery = ProductGallery.objects.filter(product_id=single_product.id)
 
